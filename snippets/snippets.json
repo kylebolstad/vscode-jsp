@@ -1,0 +1,86 @@
+{
+	"attribute": {
+		"prefix": "attribute",
+		"body": "<%@ attribute name=\"$1\"${2: fragment=\"true\"} %>\n",
+		"description": "@attribute",
+		"scope": "text.html"
+	},
+	"include": {
+		"prefix": "include",
+		"body": "<%@ include file=\"$0\" %>\n",
+		"description": "@include",
+		"scope": "text.html"
+	},
+	"c:choose": {
+		"prefix": "c",
+		"body": "<c:choose>\n\t<c:when test=\"\\${$1}\">\n\t\t$2\n\t</c:when>\n\t<c:otherwise>\n\t\t$3\n\t</c:otherwise>\n</c:choose>",
+		"description": "c:choose",
+		"scope": "text.html"
+	},
+	"c:forEach": {
+		"prefix": "c",
+		"body": "<c:forEach var=\"$1\" items=\"\\${$2}\">\n\t${0:$TM_SELECTED_TEXT}\n</c:forEach>",
+		"description": "c:forEach",
+		"scope": "text.html"
+	},
+	"c:if": {
+		"prefix": "c",
+		"body": "<c:if test=\"\\${$1}\">\n\t${0:$TM_SELECTED_TEXT}\n</c:if>",
+		"description": "c:if",
+		"scope": "text.html"
+	},
+	"c:out": {
+		"prefix": "c",
+		"body": "<c:out value=\"${2:\\${$1\\}}\"${3: escapeXml=\"false\"}${4: default=\"$5\"}/>",
+		"description": "c:out",
+		"scope": "text.html"
+	},
+	"c:redirect": {
+		"prefix": "c",
+		"body": "<c:redirect url=\"$1\"/>",
+		"description": "c:redirect",
+		"scope": "text.html"
+	},
+	"c:set": {
+		"prefix": "c",
+		"body": "<c:set var=\"$1\"${3: value=\"${4:\\${$5\\}}\"}${2:>\n\t${0:$TM_SELECTED_TEXT}\n</c:set}>",
+		"description": "c:set",
+		"scope": "text.html"
+	},
+	"c:when": {
+		"prefix": "c",
+		"body": "<c:when test=\"\\${$1}\">\n\t${0:$TM_SELECTED_TEXT}\n</c:when>",
+		"description": "c:when",
+		"scope": "text.html"
+	},
+	"jsp:attribute": {
+		"prefix": "jsp",
+		"body": "<jsp:attribute name=\"$1\">${2:$TM_SELECTED_TEXT}</jsp:attribute>",
+		"description": "jsp:attribute",
+		"scope": "text.html"
+	},
+	"jsp:body": {
+		"prefix": "jsp",
+		"body": "<jsp:body>\n\t${1:$TM_SELECTED_TEXT}\n</jsp:body>",
+		"description": "jsp:body",
+		"scope": "text.html"
+	},
+	"jsp:include": {
+		"prefix": "jsp",
+		"body": "<jsp:include page=\"/$1\"${2:>\n\t<jsp:param name=\"${3:NAME}\" value=\"${4:VALUE}\"/>\n</jsp:include}>",
+		"description": "jsp:include",
+		"scope": "text.html"
+	},
+	"jsp:invoke": {
+		"prefix": "jsp",
+		"body": "<jsp:invoke fragment=\"${1:$TM_SELECTED_TEXT}\" var=\"${2:$TM_SELECTED_TEXT}\"/>",
+		"description": "jsp:invoke",
+		"scope": "text.html"
+	},
+	"jsp:param": {
+		"prefix": "jsp",
+		"body": "<jsp:param name=\"${1:NAME}\" value=\"${2:$TM_SELECTED_TEXT}\"/>",
+		"description": "jsp:param",
+		"scope": "text.html"
+	}
+}
